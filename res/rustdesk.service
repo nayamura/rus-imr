@@ -1,5 +1,5 @@
 [Unit]
-Description=RustDesk
+Description=Remo-IMR
 Requires=network.target
 After=systemd-user-sessions.service
 
