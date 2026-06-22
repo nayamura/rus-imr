@@ -1,11 +1,11 @@
 [package]
-name = "rustdesk"
+name = "remo-imr"
 version = "1.4.8"
 authors = ["rustdesk <info@rustdesk.com>"]
 edition = "2021"
 build= "build.rs"
 description = "Remo-IMR Remote Desktop"
-default-run = "rustdesk"
+default-run = "remo-imr"
 rust-version = "1.75"
 
 [lib]
@@ -214,9 +214,9 @@ libxdo-sys = { path = "libs/libxdo-sys-stub" }
 
 [package.metadata.winres]
 LegalCopyright = "Copyright © 2025 Purslane Ltd. All rights reserved."
-ProductName = "RustDesk"
+ProductName = "Remo-IMR"
 FileDescription = "RustDesk Remote Desktop"
-OriginalFilename = "rustdesk.exe"
+OriginalFilename = "remo-imr.exe"
 
 [target.'cfg(target_os="windows")'.build-dependencies]
 winres = "0.1"
