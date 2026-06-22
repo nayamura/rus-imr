@@ -97,14 +97,28 @@ open(p, 'w', encoding='utf-8').write(s)
 print("   fuente OK")
 PY
 
-# ---------- 4. LOGO ----------
-echo "==> Reemplazando logo (assets/icon.svg)"
+# ---------- 4. LOGO (app) ----------
+echo "==> Reemplazando logo de la app (assets/icon.svg)"
 if [ -f "$SCRIPT_DIR/assets/icon.svg" ]; then
     cp "$REPO/flutter/assets/icon.svg" "$REPO/flutter/assets/icon.svg.bak" 2>/dev/null || true
     cp "$SCRIPT_DIR/assets/icon.svg" "$REPO/flutter/assets/icon.svg"
-    echo "   logo OK"
+    echo "   logo app OK"
 else
     echo "   (aviso) no encontré assets/icon.svg junto al script; copia el logo manualmente."
+fi
+
+# ---------- 5. ICONOS (res/) ----------
+echo "==> Reemplazando iconos del paquete (res/)"
+if [ -d "$SCRIPT_DIR/res" ]; then
+    for f in 32x32.png 64x64.png 128x128.png 128x128@2x.png icon.png mac-icon.png icon.ico; do
+        if [ -f "$SCRIPT_DIR/res/$f" ]; then
+            cp "$REPO/res/$f" "$REPO/res/$f.bak" 2>/dev/null || true
+            cp "$SCRIPT_DIR/res/$f" "$REPO/res/$f"
+        fi
+    done
+    echo "   iconos res/ OK"
+else
+    echo "   (aviso) no encontré la carpeta res/ junto al script."
 fi
 
 echo ""
