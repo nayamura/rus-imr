@@ -1,8 +1,8 @@
 # Skin "Medianoche" + marca IMR para RustDesk
 
 Personalización completa de RustDesk (Flutter): paleta, tipografía, bordes e iconos.
-El logo IMR se usa **tal cual lo entregaste**, solo adaptado en tamaño y centrado
-sobre fondo blanco (su diseño no se modifica).
+El icono usa las **iniciales IMR de tu logo** (degradado y tipografía originales,
+recortadas sin el tagline) sobre fondo blanco.
 
 ## Paleta (skin Medianoche)
 | Uso              | Color      |
@@ -17,9 +17,9 @@ sobre fondo blanco (su diseño no se modifica).
 - **Colores**: clase `MyTheme` en `flutter/lib/common.dart` (light + dark).
 - **Fuente**: inyecta `Inter` vía `google_fonts` (ya está en pubspec.yaml).
 - **Bordes**: botones/inputs 8→12 px, diálogos 18→20 px.
-- **Logo app**: `flutter/assets/icon.svg` (tu logo embebido sobre fondo blanco).
+- **Logo app**: `flutter/assets/icon.svg` (iniciales IMR, fondo blanco).
 - **Iconos paquete**: `res/32x32.png`, `64x64`, `128x128`, `128x128@2x`,
-  `icon.png` (1024), `mac-icon.png` (1024) y `icon.ico` (Windows, multi-tamaño).
+  `icon.png` (1024), `mac-icon.png` (1024) y `icon.ico` (Windows, 16→256 px).
 
 ## Cómo aplicar
 ```bash
@@ -32,14 +32,14 @@ El script crea backups (`*.bak`) y es re-ejecutable.
 
 ## Archivos del paquete
 - `apply_midnight_skin.sh` — aplica todo automáticamente.
-- `assets/icon.svg` — logo de la app (tu logo intacto, fondo blanco).
-- `res/*` — set completo de iconos para empaquetado.
-- `logo_horizontal.png` — tu logo recortado, fondo transparente (para web/banner).
+- `assets/icon.svg` — logo de la app (iniciales IMR, fondo blanco).
+- `res/*` — set completo de iconos para empaquetado (incluye icon.ico de Windows).
+- `logo_horizontal.png` — iniciales IMR con fondo transparente (para web/banner).
 - `icon_square_light.png` — vista previa del icono cuadrado.
 - `01_mytheme_colors.dart` — bloque de colores de referencia (manual).
 
 ## Nota
-Tu logo tiene letras oscuras pensadas para fondo claro; por eso el icono usa
-fondo blanco (se ve nítido). Para banner/web usa `logo_horizontal.png` directamente.
-El nombre de la app (en `pubspec.yaml` y archivos de `res/`) no se toca: dímelo si
-quieres cambiarlo también.
+Se quitó el tagline "Ideas Make Reality" del icono para que las iniciales se lean
+nítidas en todos los tamaños (incluido 16 px en la barra de tareas de Windows).
+El icono usa fondo blanco porque las letras son oscuras (diseñadas para fondo claro).
+El nombre de la app (en `pubspec.yaml` y archivos de `res/`) no se toca.
